@@ -16,7 +16,7 @@
 
      
 <?php 
-
+    session_start();
     if (!empty($_GET)){
         $username = $_GET['username'];
         $password = $_GET['password'];
@@ -25,8 +25,15 @@
             die("Ne možemo pronaći username, dali ste registrirani?");
         } 
         else{
-            ##Kad postoji onda radi
-            die("Korisnik postoji!");
+           if (pass_check($username, $password)){
+               #password ti ne treba, treba nam samo username je po njemu ćemo raditi queryie
+               $_SESSION['username'] = $username;
+               header("location:login_success.php");
+            }
+          else {
+              #session_destroy();
+              die("Kriva lozinka");
+         }
             
         }
     
