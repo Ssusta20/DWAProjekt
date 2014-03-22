@@ -1,8 +1,14 @@
-<?php 
-    include 'core/init.php';
-    include 'header.php';
-    
-?> 
+<?php include 'core/init.php';?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link href="css/all.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style media="all" type="text/css">
+</style>
+</head>
+<body>
 
 <form class="form" action="login.php" method="GET">
     <h1>Login</h1>
@@ -12,7 +18,9 @@
     <a href="registracija.php">Registracija</a>
 </form>
 
- <?php include 'footer.php'; ?>
+
+</body>
+</html>
 
      
 <?php 
@@ -28,7 +36,7 @@
            if (pass_check($username, $password)){
                #password ti ne treba, treba nam samo username je po njemu ćemo raditi queryie
                $_SESSION['username'] = $username;
-               header("location:login_success.php");
+               header("location:index.php");
             }
           else {
               #session_destroy();

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 require 'baza/konekcija.php';
 require 'funkcije/generalne.php';
