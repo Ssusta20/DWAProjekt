@@ -355,3 +355,43 @@ div.table .select select {
     position: absolute;
     border-radius: 5px;
 }
+
+/*Testiranje za Lead detalje*/
+/*--------------------------------*/
+.unos{
+    width: 350px;
+    min-height: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    /*left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -125px;*/
+    /*background-color:;*/
+    position: absolute;
+    border-radius: 5px;
+    
+}
+.unos label{
+   width: 90px;
+   display: inline-block;
+   text-align: left;
+   font-weight:bold; 
+}
+.unos input {
+   width: 200px;
+}
+
+.unos select {
+    width: 200px;
+}
+.unos textarea {
+    width: 200px;
+}
+.unos button {
+   display: inline;
+   /*float:right;*/
+}
+/*--------------------------------*/
+
