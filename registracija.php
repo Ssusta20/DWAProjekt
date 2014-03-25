@@ -69,24 +69,27 @@ if (!empty($_GET)){
   
     
     
-   /*if (($username && $email) === true ){
+   if (user_exists($username) === true && email_check($email) === true){
         die("username i email postoje!!! probajte sa drugim imenom ili se logirajte");
                 header("location:registracija.php");
 
-    }*/
-    if (user_exists($username) === true) {
-    header("location:registracija.php");
-        die("user postoji!!! probajte sa drugim usernameom");
+    }
+    elseif (user_exists($username) === true) {
+   
+        die("user postoji!!! probajte sa drugim usernameom"); 
+        header("location:registracija.php");
 }
     elseif (email_check($email) === true) {
-        header("location:registracija.php");
+        
         die("email postoji, dali ste se već registrirali?");
+        header("location:registracija.php");
 }
 
  else {
     registracija($ime, $prezime, $email, $password, $username);
     header("location:login.php");
-}
+ }
+  
 }
 
 ?>
