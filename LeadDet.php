@@ -1,14 +1,26 @@
-<!DOCTYPE html> 
+<?php include 'core/init.php';?>
+<?php include 'check_login.php';?>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <link href="css/all.css" rel="stylesheet" type="text/css"/>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <style media="all" type="text/css">
-        </style>
-        <title>Lead - detalji </title>
-    </head>
-    <body>
-        <form class="unos" action="" method="POST">
+<head>
+<title>CMS Admin</title>
+<link href="css/all.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style media="all" type="text/css">
+</style>
+</head>
+<body>
+<div id="main">
+    
+ <?php include 'dijelovi/header.php';?>
+    
+ <div id="middle">
+      
+<?php include 'dijelovi/aside.php'?>
+       <article id="center-column">
+      
+      <form class="unos" action="" method="POST">
             <h1>Leadovi detalji</h1>
             <button> Ažuriraj </button>
             <button> Obriši </button>
@@ -40,8 +52,17 @@
                 <option value="4">Test4</option>
             </select>
             
-            <!-- Fale još stvari oko adrese. To će se napraviti kada se ažurira baza-->
             
-        </form>
-    </body>
+        </form>  
+    </article>
+
+<?php include 'dijelovi/section.php'?>
+ 
+</div>
+<?php include 'dijelovi/footer.php'?>    
+
+</div>
+</body>
 </html>
+
+

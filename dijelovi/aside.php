@@ -2,7 +2,7 @@
       <h3>Header</h3>
       <ul class="nav">
         <li><a href="login.php">Login</a></li>
-        <li><a href="">Dollar</a></li>
+        <li><a href="LeadDet.php"><strong>Leadsi NOVO!!!</strong></a></li>
         <li><a href="">Lorem dollar</a></li>
         <li><a href="">Ipsum dollar</a></li>
         <li><a href="">Lorem Ipsum dollar</a></li>

@@ -1,6 +1,5 @@
 <?php
 function user_exists($username){
-    #$username = sanitize($username);
     $query = mysql_query("SELECT count(*) as broj FROM lm_user where username='$username';");
     if (mysql_result($query, 0) == 1){
         return true;
@@ -8,8 +7,6 @@ function user_exists($username){
     else {
         return false;
     }
-    
-    #return (mysql_result($query, 0) == 1) ? true : false;
 }
 
 function pass_check($username,$password){
@@ -20,8 +17,22 @@ function pass_check($username,$password){
     else {
         return false;
     }
-    
-    
+ }
+ 
+
+function email_check($email){
+    $query = mysql_query("SELECT count(*) as broj FROM lm_user where email='$email';");
+    if (mysql_result($query, 0) == 1){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function registracija($ime, $prezime, $email, $password, $username){
+ mysql_query("INSERT INTO lm_user (ime, prezime, email, password, username) VALUES ('$ime', '$prezime', '$email', '$password', '$username')");
+
 }
 ?>
 

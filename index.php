@@ -1,5 +1,5 @@
-
 <?php include 'core/init.php';?>
+<?php include 'check_login.php';?>
 
 <!DOCTYPE html>
 <html>

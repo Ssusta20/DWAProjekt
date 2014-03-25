@@ -15,7 +15,7 @@
     Username:<br> <input type="text" name="username" maxlength="20" required><br>
     Lozinka:<br> <input type="password" name="password" maxlength="15" required><br><br>
     <input type="submit" value="Logiraj se"><br><br>
-    <a href="registracija.php">Registracija</a>
+    <a href="registracija.php" style="color:blue">Registracija</a>
 </form>
 
 
@@ -24,7 +24,7 @@
 
      
 <?php 
-    session_start();
+    
     if (!empty($_GET)){
         $username = $_GET['username'];
         $password = $_GET['password'];
@@ -41,6 +41,7 @@
           else {
               #session_destroy();
               die("Kriva lozinka");
+              header("location: login.php");
          }
             
         }

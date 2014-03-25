@@ -1,5 +1,8 @@
-<header id="header"> <a href="index.php" class="logo">Leads managment</a>
-       <nav>
+<header id="header">
+    <p style="text-align: right; margin-right: 20px;"><a href="logout.php">Logout</a></p>
+    
+    <a href="index.php" class="logo">Leads managment</a>
+          <nav>
       <ul id="top-navigation">
       <li class="active"><span><span>Homepage</span></span></li>
       <li><span><span><a href="">Users</a></span></span></li>
