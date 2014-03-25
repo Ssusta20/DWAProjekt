@@ -73,8 +73,8 @@ if (!empty($_GET)){
         die("username i email postoje!!! probajte sa drugim imenom ili se logirajte");
                 header("location:registracija.php");
 
-    }
-    elseif (user_exists($username) === true) {
+    }*/
+    if (user_exists($username) === true) {
     header("location:registracija.php");
         die("user postoji!!! probajte sa drugim usernameom");
 }
@@ -86,9 +86,7 @@ if (!empty($_GET)){
  else {
     registracija($ime, $prezime, $email, $password, $username);
     header("location:login.php");
-}*/
-   registracija($ime, $prezime, $email, $password, $username);
-    header("location:login.php");
+}
 }
 
 ?>
