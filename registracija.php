@@ -39,35 +39,7 @@ if (!empty($_GET)){
     $email = $_GET['email'];
     $password = $_GET['password'];
 
-    /*
-    switch($test){
-        case ($username && $email) === true :
-        header("location:registracija.php");
-        die("username i email postoje!!! probajte sa trugim imenom ili se logirajte");
-   
-        break;
-    case user_exists($username) === true :
-        header("location:registracija.php");
-        die("user postoji!!! probajte sa drugim usernameom");
-        
-        break;
-    case email_check($email) === true :
-        header("location:registracija.php");
-        die("email postoji, dali ste se već registrirali?");
-        
-        break;
-        default:
-    registracija($ime, $prezime, $email, $password, $username);
-    header("location:login.php");
-    }
-  */
-    
 
-
-
-//ne znam di sam fulao, uvijek mi javlja ovu prvu grešku..  sutra cu se zajebavat s tim, previse mi se spava sad
-  
-    
     
    if (user_exists($username) === true && email_check($email) === true){
         die("username i email postoje!!! probajte sa drugim imenom ili se logirajte");
