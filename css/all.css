@@ -365,11 +365,6 @@ div.table .select select {
     padding: 10px;
     border: 1px solid black;
     text-align: center;
-    /*left: 50%;
-    top: 50%;
-    margin-left: -150px;
-    margin-top: -125px;*/
-    /*background-color:;*/
     position: absolute;
     border-radius: 5px;
     
@@ -385,13 +380,20 @@ div.table .select select {
 }
 
 .unos select {
-    width: 200px;
+    width: 205px;
 }
 .unos textarea {
     width: 200px;
 }
-.unos button {
+/*.unos button {
    display: inline;
    /*float:right;*/
+}*/
+
+
+.unos spanFormat
+{
+ display: inline;
+
 }
 /*--------------------------------*/

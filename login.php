@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form class="form" action="login.php" method="GET">
+<form class="form" action="login.php" method="POST">
     <h1>Login</h1>
     Username:<br> <input type="text" name="username" maxlength="20" required><br>
     Lozinka:<br> <input type="password" name="password" maxlength="15" required><br><br>
@@ -25,9 +25,9 @@
      
 <?php 
     
-    if (!empty($_GET)){
-        $username = $_GET['username'];
-        $password = $_GET['password'];
+    if (!empty($_POST)){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         
         if (user_exists($username) === FALSE){
             die("Ne možemo pronaći username, dali ste registrirani?");
