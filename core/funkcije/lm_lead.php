@@ -31,5 +31,17 @@
      mysql_query("DELETE FROM lm_lead WHERE id = '$id'");
     
     }
+    
+    /*Liste za zemlje*/
+    function lm_lead_LOVZemlja(){
+        $query = mysql_query("select naziv, id from lm_zemlja;");
+        return $query;
+    }
+    
+    /*Lista za kvalifikaciju*/
+    function lm_lead_LOVKvalifikacija(){
+        $query = mysql_query("select opis, id from lm_sif_kvalif;");
+        return $query;
+    }
 ?>
 

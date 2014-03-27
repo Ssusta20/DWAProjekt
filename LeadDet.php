@@ -31,7 +31,7 @@
                 <input type="text" name="id" value="" hidden />
                 <br>
                 <label>Šifra:</label>
-                <input type="text" name="sifra" value="" required />
+                <input type="text" name="sifra" value="<?= $_POST['sifra'] ?>" required />
                 <br>
                 <label>Ime:</label>
                 <input type="text" name="ime" value="" required />
@@ -63,10 +63,12 @@
                 <label>Država:</label>
                 <select name="drzava">
                     <!-- Popunjavanje iz baze-->
-                    <option value="1">Test1</option>
-                    <option value="2">Test2</option>
-                    <option value="3">Test3</option>
-                    <option value="4">Test4</option>
+                    <?php
+                        $result = lm_lead_LOVZemlja();
+                        while ($row = mysql_fetch_array($result)) {
+                            echo "<option value='" . $row['id'] . "'>" . $row['naziv'] . "</option>";
+                        }
+                    ?>
                 </select>
                 <label>Napomena:</label>
                 <textarea name="napomena" cols = "30" rows = "6" maxlength = "2000" ></textarea> 
@@ -84,10 +86,33 @@
     
             if (!empty($_POST)){
                 $akcija = $_POST['akcija'];
+               
+                /*ovo ću možda promjenti - ako ćemo koristiti objekte*/
+                $id = $_POST['id'];
+                $sifra = $_POST['sifra'];
+                $ime = $_POST['ime'];
+                $prezime = $_POST['prezime'];
+                $email = $_POST['email'];
+                $naziv_tvrtke = $_POST['naziv_tvrtke'];
+                $telefon = $_POST['telefon'];
+                $mobitel = $_POST['mobitel'];
+                $ulica = $_POST['ulica'];
+                $grad = $_POST['grad'];
+                $zip = $_POST['zip'];
+                $napomena = $_POST['napomena'];
+                $lm_user_id = username2id($_SESSION['username']);
+                $lm_sif_kvalif_id = $_POST['lm_sif_kvalif_id'];
+                $lm_zemlja_id = $_POST['lm_zemlja_id'];
+                /*ovo ću možda promjenti*/
+                
+                
                 if($akcija == "Ažuriraj"){
-                    #treba još napraviti
-                    #da li je postojeći slog ili dodavanje novog sloga
-                     die ("Ažuriraj");
+                    if (empty($id)){
+                        die ("Novi");
+                    }
+                    else {
+                        die ("Ažuriraj");
+                    }
                     
                     
                 }
