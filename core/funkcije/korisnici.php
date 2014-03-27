@@ -34,5 +34,16 @@ function registracija($ime, $prezime, $email, $password, $username){
  mysql_query("INSERT INTO lm_user (ime, prezime, email, password, username) VALUES ('$ime', '$prezime', '$email', '$password', '$username')");
 
 }
+
+    /*funkcija za dobivanje id iz username za tabelu lm_lead*/
+    
+    function username2id($username){
+        $query = mysql_query("SELECT id as id FROM lm_user where username='$username';");
+        $id = mysql_result($query, 0);
+        return $id;
+        
+    }
+    
+    
 ?>
 
