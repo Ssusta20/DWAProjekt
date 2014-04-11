@@ -36,7 +36,7 @@
            if (pass_check($username, $password)){
                #password ti ne treba, treba nam samo username je po njemu ćemo raditi queryie
                $_SESSION['username'] = $username;
-               header("location:index.php");
+               header("location:lead.php");
             }
           else {
               #session_destroy();

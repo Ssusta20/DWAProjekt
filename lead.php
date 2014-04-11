@@ -22,6 +22,7 @@
         <div>
             <table class="listing">
             <tr>
+              <th>Id</th>
               <th>Šifra</th>
               <th>Ime</th> 
               <th>Prezime</th>
@@ -36,6 +37,7 @@
                 $result = lm_lead_query(username2id($_SESSION['username']));
                 while ($row = mysql_fetch_array($result)) {
                     echo "<tr>";
+                    echo "<td><a  href='LeadDet.php?id=" .$row["id"]. "'>" . $row["id"] . "</a></td>";
                     echo "<td>" . $row["sifra"] . "</td>";
                     echo "<td>" . $row["ime"] . "</td>";
                     echo "<td>" . $row["prezime"] . "</td>";

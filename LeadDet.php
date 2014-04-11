@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html>
+<!-- Finderle -->
 <head>
 <title>CMS Admin</title>
 <link href="css/all.css" rel="stylesheet" type="text/css"/>
@@ -25,8 +26,30 @@
                 <span class="spanFormat">
                  <input type="submit" name = "akcija" value="Ažuriraj" />
                  <input type="submit" name = "akcija" value="Obriši" />
+                 <input type= "button" onClick="location.href='lead.php'" value='Povratak' />
                 </span>
                 <br>
+                <?php
+                #Dohvačanje slogova ako se došlo iz tabele
+                if ($_GET['id'] &&  $_GET['akcija'] !="Ažuriraj"  &&  $_GET['akcija'] !="Obriši" ){
+                     $result = lm_lead_query_det(username2id($_SESSION['username']),$_GET['id']);
+                        while ($row = mysql_fetch_array($result)) {
+                             $_GET['sifra'] = $row['sifra'];
+                             $_GET['ime'] = $row['ime'];
+                             $_GET['prezime'] = $row['prezime'];
+                             $_GET['email'] = $row['email'];
+                             $_GET['tvrtka'] = $row['tvrtka'];
+                             $_GET['telefon'] = $row['telefon'];
+                             $_GET['mobitel'] = $row['mobitel'];
+                             $_GET['ulica'] = $row['ulica'];
+                             $_GET['grad'] = $row['grad'];
+                             $_GET['drzava'] = $row['lm_zemlja_id'];
+                             $_GET['napomena'] = $row['napomena'];
+                             $_GET['kvalifikacija'] = $row['lm_sif_kvalif_id'];
+                             
+                        }
+                }    
+                ?>
                 <!-- id sloga iz tablice da se vidi da li slog GEToji ili je unos novog sloga-->
                 <input type="text" name="id" value="<?= $_GET['id'] ?>" hidden />
                 <br>
@@ -97,12 +120,12 @@
                        
                     ?>
                 </select>
+                
             </form>  
         <?php 
     
-            if (!empty($_GET)){
+             if (!empty($_GET)){
                 $akcija = $_GET['akcija'];
-               
                 /*ovo ću možda promjenti - ako ćemo koristiti objekte*/
                 $id = $_GET['id'];
                 $sifra = $_GET['sifra'];
@@ -126,30 +149,29 @@
                     
                     if (empty($id)){
                         $id = lm_lead_insert ($sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
-                       
+                       location.replace('lead.php');
                         
                     }
                     else {
                         lm_lead_update($id, $sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
-                     
                     }
-                    
-                   #idi na tablicu
+                 
                     
                     
                 }
                 elseif ($akcija == "Obriši"){
                         lm_lead_delete($id);
-                        #idi na tablicu
-                    
                 }
                 else{
-                    die ("NeGETojeća akcija");
+                    #ako se došlo iz tablice
+                    
+                    }
+                        
                 }
                 
                
                
-            }
+            
         ?>
         </article>
 
