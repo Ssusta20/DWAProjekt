@@ -35,6 +35,7 @@ function registracija($ime, $prezime, $email, $password, $username){
 
 }
 
+    /*Petar Finderle*/
     /*funkcija za dobivanje id iz username za tabelu lm_lead*/
     
     function username2id($username){
@@ -43,6 +44,8 @@ function registracija($ime, $prezime, $email, $password, $username){
         return $id;
         
     }
+    
+    /*Kraj Petar Finderle*/
     
     
 ?>

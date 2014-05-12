@@ -1,7 +1,7 @@
 <?php
     /*Petar Finderle*/
     function lm_lead_query($lm_user_id){
-        $query = mysql_query("select * from lm_lead where lm_user_id = '$lm_user_id';");
+        $query = mysql_query("select * from lm_lead where lm_user_id = '$lm_user_id' or 'admin'='". $_SESSION['username'] ."';");
         if (!$query) {
             die('Invalid query: ' . mysql_error());
         }
@@ -9,7 +9,7 @@
     }
     
      function lm_lead_query_det($lm_user_id, $id){
-        $query = mysql_query("select * from lm_lead where lm_user_id = '$lm_user_id' and id = '$id';");
+        $query = mysql_query("select * from lm_lead where id = '$id';");
         if (!$query) {
             die('Invalid query: ' . mysql_error());
         }
