@@ -1,9 +1,9 @@
+<!--Petar Finderle-->
 <?php include 'core/init.php';?>
 <?php include 'check_login.php';?>
 
 <!DOCTYPE html>
 <html>
-<!-- Finderle -->
 <head>
 <title>CMS Admin</title>
 <link href="css/all.css" rel="stylesheet" type="text/css"/>
@@ -20,8 +20,7 @@
       
 <?php include 'dijelovi/aside.php'?>
        <article id="center-column">
-      
-          <form class="unos" action="LeadDet.php" method="GET">
+         <form class="unos" action="LeadDet.php" method="GET">
                 <h1>Lead detalji</h1>
                 <span class="spanFormat">
                  <input type="submit" name = "akcija" value="Ažuriraj" />
@@ -38,7 +37,7 @@
                              $_GET['ime'] = $row['ime'];
                              $_GET['prezime'] = $row['prezime'];
                              $_GET['email'] = $row['email'];
-                             $_GET['tvrtka'] = $row['tvrtka'];
+                             $_GET['tvrtka'] = $row['naziv_tvrtke'];
                              $_GET['telefon'] = $row['telefon'];
                              $_GET['mobitel'] = $row['mobitel'];
                              $_GET['ulica'] = $row['ulica'];
@@ -86,6 +85,7 @@
                 <label>Država:</label>
                 <select name="drzava">
                     <!-- Popunjavanje iz baze-->
+                    <!-- listu za zemlje-->
                     <?php
                         $result = lm_lead_LOVZemlja();
                         while ($row = mysql_fetch_array($result)) {
@@ -106,6 +106,8 @@
                 <br>
                 <label>Kvalifikacija:</label>
                 <select name="kvalifikacija">
+                   <!-- Popunjavanje iz baze-->
+                   <!-- listu za kvalifikacije-->
                    <?php
                         $result = lm_lead_LOVKvalifikacija();
                         while ($row = mysql_fetch_array($result)) {
@@ -126,7 +128,6 @@
     
              if (!empty($_GET)){
                 $akcija = $_GET['akcija'];
-                /*ovo ću možda promjenti - ako ćemo koristiti objekte*/
                 $id = $_GET['id'];
                 $sifra = $_GET['sifra'];
                 $ime = $_GET['ime'];
@@ -142,14 +143,13 @@
                 $lm_user_id = username2id($_SESSION['username']);
                 $lm_sif_kvalif_id = $_GET['kvalifikacija'];
                 $lm_zemlja_id = $_GET['drzava'];
-                /*ovo ću možda promjenti*/
-                
+              
                 
                 if($akcija == "Ažuriraj"){
                     
                     if (empty($id)){
                         $id = lm_lead_insert ($sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
-                       location.replace('lead.php');
+                       #location.replace('lead.php');
                         
                     }
                     else {
@@ -158,14 +158,14 @@
                  
                     
                     
-                }
-                elseif ($akcija == "Obriši"){
-                        lm_lead_delete($id);
-                }
-                else{
-                    #ako se došlo iz tablice
-                    
                     }
+                    elseif ($akcija == "Obriši"){
+                            lm_lead_delete($id);
+                    }
+                    /*else{
+                        #ako se došlo iz tablice
+                        
+                        }*/
                         
                 }
                 

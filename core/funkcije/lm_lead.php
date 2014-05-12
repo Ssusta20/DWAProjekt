@@ -1,5 +1,5 @@
 <?php
-    /*Finderle*/
+    /*Petar Finderle*/
     function lm_lead_query($lm_user_id){
         $query = mysql_query("select * from lm_lead where lm_user_id = '$lm_user_id';");
         if (!$query) {

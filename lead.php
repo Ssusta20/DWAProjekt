@@ -1,3 +1,4 @@
+<!--Petar Finderle-->
 <?php include 'core/init.php';?>
 <?php include 'check_login.php';?>
 
@@ -18,7 +19,11 @@
  <div id="middle">
       
 <?php include 'dijelovi/aside.php'?>
+        
        <article id="center-column">
+           <form action="LeadDet.php">
+                <input type="submit" value="Dodaj novi">
+            </form>
         <div>
             <table class="listing">
             <tr>
@@ -37,7 +42,7 @@
                 $result = lm_lead_query(username2id($_SESSION['username']));
                 while ($row = mysql_fetch_array($result)) {
                     echo "<tr>";
-                    echo "<td><a  href='LeadDet.php?id=" .$row["id"]. "'>" . $row["id"] . "</a></td>";
+                    echo "<td><a  href='LeadDet.php?id=" .$row["id"]. "'><B>" . $row["id"] . "</B></a></td>";
                     echo "<td>" . $row["sifra"] . "</td>";
                     echo "<td>" . $row["ime"] . "</td>";
                     echo "<td>" . $row["prezime"] . "</td>";
