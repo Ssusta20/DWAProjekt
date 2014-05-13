@@ -1,4 +1,9 @@
 <!--Petar Finderle-->
+
+<?php 
+#Bez ovoga mi PHP naredba header("location: lead.php"); nije radila ispravno nakon što sam prebacio stranice na hosting.
+#Nakon googlanja našao sam ovo riješenje;
+ob_start();?>
 <?php include 'core/init.php';?>
 <?php include 'check_login.php';?>
 
@@ -23,14 +28,14 @@
          <form class="unos" action="LeadDet.php" method="GET">
                 <h1>Lead detalji</h1>
                 <span class="spanFormat">
-                 <input type="submit" name = "akcija" value="Ažuriraj" />
+                 <input type="submit" name = "akcija" value="Spremi" />
                  <input type="submit" name = "akcija" value="Obriši" />
                  <input type= "button" onClick="location.href='lead.php'" value='Povratak' />
                 </span>
                 <br>
                 <?php
                 #Dohvačanje slogova ako se došlo iz tabele
-                if ($_GET['id'] &&  $_GET['akcija'] !="Ažuriraj"  &&  $_GET['akcija'] !="Obriši" ){
+                if ($_GET['id'] &&  $_GET['akcija'] !="Spremi"  &&  $_GET['akcija'] !="Obriši" ){
                      $result = lm_lead_query_det(username2id($_SESSION['username']),$_GET['id']);
                         while ($row = mysql_fetch_array($result)) {
                              $_GET['sifra'] = $row['sifra'];
@@ -42,6 +47,7 @@
                              $_GET['mobitel'] = $row['mobitel'];
                              $_GET['ulica'] = $row['ulica'];
                              $_GET['grad'] = $row['grad'];
+                             $_GET['zip'] = $row['zip'];
                              $_GET['drzava'] = $row['lm_zemlja_id'];
                              $_GET['napomena'] = $row['napomena'];
                              $_GET['kvalifikacija'] = $row['lm_sif_kvalif_id'];
@@ -145,15 +151,18 @@
                 $lm_zemlja_id = $_GET['drzava'];
               
                 
-                if($akcija == "Ažuriraj"){
+                if($akcija == "Spremi"){
                     
                     if (empty($id)){
                         $id = lm_lead_insert ($sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
-                       #location.replace('lead.php');
+                        header("location: lead.php");
+                        exit();
                         
                     }
                     else {
                         lm_lead_update($id, $sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
+                        header("location: lead.php");
+                        exit();
                     }
                  
                     
@@ -161,6 +170,9 @@
                     }
                     elseif ($akcija == "Obriši"){
                             lm_lead_delete($id);
+                            header("location: lead.php");
+                            exit();
+                            
                     }
                     /*else{
                         #ako se došlo iz tablice
