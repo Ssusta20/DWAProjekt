@@ -1,4 +1,7 @@
 <?php
+/*Darko Pranjić
+
+ * ovdje su obuhvaćene sve php naredbe tako da ne trebamo pozivati svaku od njih u svakom fileu */
 session_start();
 
 require 'baza/konekcija.php';

@@ -15,7 +15,7 @@
         }
         return $query;
     }
-
+    
     function lm_user_insert ($username, $password, $ime, $prezime, $email){
         mysql_query(
          "INSERT INTO lm_user (username, password, ime, prezime, email)

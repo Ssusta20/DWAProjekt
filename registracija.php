@@ -1,3 +1,4 @@
+<!--Darko Pranjić-->
 <?php include 'core/init.php';?>
 
 <!DOCTYPE html>
@@ -40,23 +41,26 @@ if (!empty($_GET)){
     $password = $_GET['password'];
 
 
-    
+        /*provjera dali postoje user Iiii email, ako ne postoje oba od prije ide dalje*/
    if (user_exists($username) === true && email_check($email) === true){
         die("username i email postoje!!! probajte sa drugim imenom ili se logirajte");
                 header("location:registracija.php");
 
     }
+    
+            /* samo user postoji u bazi pa vraća ponovno na registracija.php*/
     elseif (user_exists($username) === true) {
    
         die("user postoji!!! probajte sa drugim usernameom"); 
         header("location:registracija.php");
 }
+        /* samo email postoji*/
     elseif (email_check($email) === true) {
         
         die("email postoji, dali ste se već registrirali?");
         header("location:registracija.php");
 }
-
+        /*ako je sve u redu upisuje registraciju u bazu*/
  else {
     registracija($ime, $prezime, $email, $password, $username);
     header("location:login.php");
