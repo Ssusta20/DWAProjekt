@@ -36,7 +36,7 @@
         } 
             /* ako je user pronaden provjerava dalje*/
         else{
-                        /*ukoliko se username i password podudaraju ide na stranicu  lead.php*/
+                        /*ukoliko se username i password podudaraju ide na stranicu  lead.php. uspješno ulogiranje*/
            if (pass_check($username, $password)){
                $_SESSION['username'] = $username;
                #header("location:lead.php");
