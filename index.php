@@ -1,5 +1,7 @@
-<?php include 'core/init.php';?>
-<?php include 'check_login.php';?>
+<!--Darko Pranjić-->
+
+<?php include 'core/init.php';?> <!--uključuje init.php koji sadrži sve ostale naredbe i provjere.-->
+<?php include 'check_login.php';?> <!--uključuje check_login.php gdje se provjerava dali postoi session, tj dali je user ulogiran-->
 
 <!DOCTYPE html>
 <html>

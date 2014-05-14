@@ -1,3 +1,5 @@
+<!--Darko Pranjić-->
+
 <?php include 'core/init.php';?>
 <!DOCTYPE html>
 <html>
@@ -24,21 +26,24 @@
 
      
 <?php 
-    
+    /*provjerava: ako nije prazno polje upisa ide dalje*/
     if (!empty($_POST)){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        
+            /*prva provjera: ako user nije pronađen u bazi*/
         if (user_exists($username) === FALSE){
             die("Ne možemo pronaći username, dali ste registrirani?");
         } 
+            /* ako je user pronaden provjerava dalje*/
         else{
+                        /*ukoliko se username i password podudaraju ide na stranicu  lead.php. uspješno ulogiranje*/
            if (pass_check($username, $password)){
                $_SESSION['username'] = $username;
                #header("location:lead.php");
                header( "Refresh: 1; url=lead.php" );
             }
           else {
+                     /* ako je upisana kriva lozinka*/
               #session_destroy();
               die("Kriva lozinka");
               header("location: login.php");
