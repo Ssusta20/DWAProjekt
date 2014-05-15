@@ -27,7 +27,7 @@
         <div>
             <table class="listing">
             <tr>
-              <th>Id</th>
+              <th>Detalji</th>
               <th>Username</th>
               <th>Password</th>
               <th>Ime</th> 
@@ -39,7 +39,7 @@
                 $result = lm_user_query(username2id($_SESSION['username']));
                 while ($row = mysql_fetch_array($result)) {
                     echo "<tr>";
-                    echo "<td><a  href='UserDet.php?id=" .$row["id"]. "'><B>" . $row["id"] . "</B></a></td>";
+                    echo "<td><a  href='UserDet.php?id=" .$row["id"]. "'><B>" /*. $row["id"]*/ . "Detalji</B></a></td>";
                     echo "<td>" . $row["username"] . "</td>";
                     echo "<td>" . $row["password"] . "</td>";
                     echo "<td>" . $row["ime"] . "</td>";

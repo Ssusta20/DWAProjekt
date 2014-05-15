@@ -1,3 +1,4 @@
+/*Petar Finderle*/
 INSERT INTO `lm_zemlja` VALUES (1, 'US', 'United States');
 
 INSERT INTO `lm_zemlja` VALUES (2, 'CA', 'Canada');

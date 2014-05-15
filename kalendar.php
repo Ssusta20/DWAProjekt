@@ -74,6 +74,7 @@
               <th>Naziv tvrtke</th>
               <th>Aktivnost</th>
               <th>Status</th>
+              <th>Detalji</th>
               
             </tr>
             <?php 

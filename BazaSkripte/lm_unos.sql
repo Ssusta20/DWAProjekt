@@ -1,3 +1,4 @@
+/*Petar Finderle*/
 insert into lm_sif_aktivnost(sifra,opis)values('Tel','Telefonski razgovor');
 insert into lm_sif_aktivnost(sifra,opis)values('Em','E-mail');
 insert into lm_sif_aktivnost(sifra,opis)values('Sms','SMS poruka');
@@ -16,7 +17,8 @@ sa.sifra sifra_akt,
 sa.opis opis_akt,
 sta.sifra sifra_sta,
 sta.opis opis_sta,
-u.id user_id 
+u.id user_id,
+l.id lead_id
 from lm_aktivnost a,
 lm_user u,
 lm_lead l,
