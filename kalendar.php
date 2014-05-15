@@ -55,9 +55,11 @@
        <article id="center-column">
        <form action="kalendar.php" method="GET">
            <div align="center">
-                <!--prenose se parametri odvojeni ; -->
+                <!--
+                tipke za navigaciju naprijed nazad po kalendaru
+                prenose se parametri odvojeni ; -->
                 <button type="submit" name = "akcija" value = <? echo "-;".$mj.";".$god ?>> <h3> < </h3> </button>
-                <?php echo "<b>Pregled za ".$mj.".".$god."</b>" ?>
+                <?php echo "<b>Pregled aktivnosti za ".$mj.".".$god."</b>" ?>
                 <button type="submit" name = "akcija" value = <? echo "+;".$mj.";".$god ?>> <h3> > </h3> </button>
                 
            </div>
@@ -67,23 +69,16 @@
         <table class="listing">
             <tr>
               <th>Datum</th>
-              <th>Lead Ime</th> 
-              <th>Lead Prezime</th>
+              <th>Ime</th> 
+              <th>Prezime</th>
+              <th>Naziv tvrtke</th>
               <th>Aktivnost</th>
               <th>Status</th>
               
             </tr>
             <?php 
                kalendar($mj,$god);
-               $result = lm_kalendar_query(username2id($_SESSION['username']));
-                while ($row = mysql_fetch_array($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["sifra"] . "</td>";
-                    echo "<td>" . $row["ime"] . "</td>";
-                    echo "<td>" . $row["prezime"] . "</td>";
-                    echo "<td>" . $row["naziv_tvrtke"] . "</td>";
-                    echo "</tr>";
-                }
+               
             ?>    
             </table>
         </div>

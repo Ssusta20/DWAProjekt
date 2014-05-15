@@ -274,7 +274,13 @@ table.listing .bg td {
 	}
 table.listing .white td {
 	background:#fff;
-	}	
+	}
+table.listing .zuto td {
+	background:yellow;
+	}
+table.listing .crveno td {
+	background:red;
+	}
 table.listing .first {border-left:0px solid #9097A9;text-align:left;}
 table.listing .last {border-right:0px solid #9097A9;}
 

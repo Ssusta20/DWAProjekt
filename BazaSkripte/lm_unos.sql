@@ -7,7 +7,7 @@ insert into lm_status_akt(sifra,opis) values('R','Realizirano');
 insert into lm_aktivnost(rb,datum,napomena,lm_lead_id,lm_sif_aktivnost_id,lm_status_akt_id) values(1,'02.05.2014','Test',6,1,1);
 create view lm_kalendar_v1 as 
 select a.id,
-a.datum,
+date_format(a.datum,'%e.%c.%Y') datum,
 a.napomena,
 l.ime,
 l.prezime,
