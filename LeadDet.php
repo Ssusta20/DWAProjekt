@@ -128,8 +128,14 @@ ob_start();?>
                        
                     ?>
                 </select>
-                
+            
+
             </form>  
+            
+           
+            
+        
+            
         <?php 
     
              if (!empty($_GET)){
@@ -185,9 +191,36 @@ ob_start();?>
                
             
         ?>
+        
         </article>
+        <div style="margin-left:45px">
+        
+            <table class="listing" >
+                <tr>
+                  <th>Detalji</td>
+                  <th>Šifra</td>
+                  <th>Ime</td> 
+                  <th>Prezime</td>
+                </tr>
+                <tr>
+                  <td>Detalji</td>
+                  <td>Šifra</td>
+                  <td>Ime</td> 
+                  <td>Prezime</td>
+                </tr>
+                <tr>
+                  <td>Detalji</td>
+                  <td>Šifra</td>
+                  <td>Ime</td> 
+                  <td>Prezime</td>
+                </tr>
+                
+            </table>
+        </div>
+       
 
-<?php include 'dijelovi/section.php'?>
+<?php #include 'dijelovi/section.php'
+?>
  
 </div>
 <?php include 'dijelovi/footer.php'?>    

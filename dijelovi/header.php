@@ -1,8 +1,15 @@
 <header id="header">
-    <p style="text-align: right; margin-right: 20px;"><a href="logout.php"><?php echo '<b>('.$_SESSION['username'].') </b>' ?>Logout</a></p>
+<p style="text-align: right; margin-right: 20px;"><a href="logout.php"><?php echo '<b>('.$_SESSION['username'].') </b>' ?>Logout</a></p>
     
-    <a href="lead.php" class="logo">Lead management</a>
-          <nav>
+    
+    
+    
+    <a class="logo" href="lead.php"  style="float:left" >Lead management</a>
+    
+
+    
+    
+    <nav style="clear:both">
       <ul id="top-navigation">
       <!--<li class="active"><span><span>Lead</span></span></li>-->
       <li><span><span><a href="lead.php">Lead</a></span></span></li>
@@ -14,4 +21,4 @@
       <li><span><span><a href="">Contents</a></span></span></li>-->
     </ul>
     </nav>
-  </header>
+ </header>

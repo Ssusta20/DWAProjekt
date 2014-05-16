@@ -21,9 +21,15 @@
 <?php include 'dijelovi/aside.php'?>
         
        <article id="center-column">
-           <form action="UserDet.php">
-                <input type="submit" value="Dodaj novi">
-            </form>
+           <!--Petar Finderlec-->
+           <?php
+               if ($_SESSION['username']=='admin'){
+                   echo('<form action="UserDet.php">
+                        <input type="submit" value="Dodaj novi">
+                    </form>');
+               }
+            ?>
+            <!-- Kraj Petar Finderle-->
         <div>
             <table class="listing">
             <tr>
@@ -41,7 +47,7 @@
                     echo "<tr>";
                     echo "<td><a  href='UserDet.php?id=" .$row["id"]. "'><B>" /*. $row["id"]*/ . "Detalji</B></a></td>";
                     echo "<td>" . $row["username"] . "</td>";
-                    echo "<td>" . $row["password"] . "</td>";
+                    echo "<td>" /*. $row["password"]*/ . "* * * * * * *</td>";
                     echo "<td>" . $row["ime"] . "</td>";
                     echo "<td>" . $row["prezime"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
