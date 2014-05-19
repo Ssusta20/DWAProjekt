@@ -67,7 +67,7 @@
 						</table>
 					</div>
 					<h2> Lead - Kvalifikacija </h2> 
-					<form action="kvalifdet.php">
+					<form action="kvalifDet.php">
 						<input type="submit" value="Dodaj novi">
 					</form>
 					<div>
@@ -83,7 +83,7 @@
 								$result = lm_sif_kvalif_query();
 								while ($row = mysql_fetch_array($result)) {
 								    echo "<tr>";
-								    echo "<td><a  href='kvalifdet.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+								    echo "<td><a  href='kvalifDet.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
 								    echo "<td>" . $row["sifra"] . "</td>";
 								    echo "<td>" . $row["opis"] . "</td>";    
 								}
