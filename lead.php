@@ -30,6 +30,11 @@
 								<th>Telefon</th>
 								<th>Mobitel</th>
 								<th>Grad</th>
+							    <?php
+    							    if ($_SESSION['username'] == 'admin'){
+    								    echo "<th>Username</th>";    
+    								}
+    							?>
 							</tr>
 							<?php
 								$result = lm_lead_query(username2id($_SESSION['username']));
@@ -44,7 +49,11 @@
 								    echo "<td>" . $row["telefon"] . "</td>";
 								    echo "<td>" . $row["mobitel"] . "</td>";
 								    echo "<td>" . $row["grad"] . "</td>";
-								    echo "</tr>";
+								    #Ako je admin prikaži još username, da vidi kome je pridodjeljen određeni lead.
+								    if ($_SESSION['username'] == 'admin'){
+								         echo "<td>" .$row["username"] . "</td>";    
+								    }
+								   echo "</tr>";
 								}
 								               
 								?> 

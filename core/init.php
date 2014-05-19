@@ -10,6 +10,7 @@ require 'funkcije/korisnici.php';
 require 'funkcije/lm_lead.php';
 require 'funkcije/lm_user.php';
 require 'funkcije/kal.php';
+require 'funkcije/lm_sif_aktivnosti.php';
 
 
 $errors = array();

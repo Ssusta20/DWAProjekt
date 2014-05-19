@@ -1,7 +1,8 @@
 <?php
 	/*Petar Finderle*/
 	function lm_lead_query($lm_user_id){
-	    $query = mysql_query("select * from lm_lead where lm_user_id = '$lm_user_id' or 'admin'='". $_SESSION['username'] ."';");
+	    /*Query iz lm_lead po useru ili admin(vidi sve). tabela lm_user uzeta je da bi admin vidio kojem useru pripada lead*/
+	    $query = mysql_query("select l.*,u.username from lm_lead l, lm_user u where l.lm_user_id = u.id and (l.lm_user_id = '$lm_user_id' or 'admin'='". $_SESSION['username'] ."');");
 	    if (!$query) {
 	        die('Invalid query: ' . mysql_error());
 	    }

@@ -128,8 +128,9 @@ a.logo {
 /* center column */
 #center-column {
 	float:left;
-	width:614px;/*614*/
+	width:700px;/*614*/
 	background:url(../img/bg-center-column.jpg) no-repeat left top;
+	background-size:700px;
 	min-height:584px;
 	padding:12px 16px 0 13px;
 	}	

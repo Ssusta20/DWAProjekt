@@ -15,7 +15,7 @@
       <li><span><span><a href="lead.php">Lead</a></span></span></li>
       <li><span><span><a href="kalendar.php">Kalendar</a></span></span></li>
       <li><span><span><a href="user.php">Korisnici - Administracija</a></span></span></li>
-      <li><span><span><a href="">Šifrarnici</a></span></span></li>
+      <li><span><span><a href="sifrarnici.php">Šifrarnici</a></span></span></li>
       <!--<li><span><span><a href="">Statistics</a></span></span></li>
       <li><span><span><a href="">Design</a></span></span></li>
       <li><span><span><a href="">Contents</a></span></span></li>-->
