@@ -17,7 +17,7 @@
 				
 				<article id="center-column">
 				    <h2> Aktivnosti </h2> 
-					<form action="sifAkt_det.php">
+					<form action="sifAktDet.php">
 						<input type="submit" value="Dodaj novi">
 					</form>
 					<div>
@@ -33,7 +33,7 @@
 								$result = lm_sif_aktivnost_query();
 								while ($row = mysql_fetch_array($result)) {
 								    echo "<tr>";
-								    echo "<td><a  href='sif_akt_det.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+								    echo "<td><a  href='sifAktDet.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
 								    echo "<td>" . $row["sifra"] . "</td>";
 								    echo "<td>" . $row["opis"] . "</td>";    
 								}
@@ -42,7 +42,7 @@
 						</table>
 					</div>
 					<h2> Statusi </h2> 
-					<form action="sifAkt_det.php">
+					<form action="statusDet.php">
 						<input type="submit" value="Dodaj novi">
 					</form>
 					<div>
@@ -55,10 +55,10 @@
 								
 							</tr>
 							<?php
-								$result = lm_sif_aktivnost_query();
+								$result = lm_status_akt_query();
 								while ($row = mysql_fetch_array($result)) {
 								    echo "<tr>";
-								    echo "<td><a  href='sif_akt_det.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+								    echo "<td><a  href='statusDet.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
 								    echo "<td>" . $row["sifra"] . "</td>";
 								    echo "<td>" . $row["opis"] . "</td>";    
 								}
@@ -67,7 +67,7 @@
 						</table>
 					</div>
 					<h2> Lead - Kvalifikacija </h2> 
-					<form action="sifAkt_det.php">
+					<form action="kvalifdet.php">
 						<input type="submit" value="Dodaj novi">
 					</form>
 					<div>
@@ -80,10 +80,10 @@
 								
 							</tr>
 							<?php
-								$result = lm_sif_aktivnost_query();
+								$result = lm_sif_kvalif_query();
 								while ($row = mysql_fetch_array($result)) {
 								    echo "<tr>";
-								    echo "<td><a  href='sif_akt_det.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+								    echo "<td><a  href='kvalifdet.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
 								    echo "<td>" . $row["sifra"] . "</td>";
 								    echo "<td>" . $row["opis"] . "</td>";    
 								}

@@ -11,6 +11,8 @@ require 'funkcije/lm_lead.php';
 require 'funkcije/lm_user.php';
 require 'funkcije/kal.php';
 require 'funkcije/lm_sif_aktivnosti.php';
+require 'funkcije/lm_status_akt.php';
+require 'funkcije/lm_sif_kvalif.php';
 
 
 $errors = array();
