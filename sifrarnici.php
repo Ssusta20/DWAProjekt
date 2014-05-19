@@ -14,11 +14,14 @@
 			<?php include 'dijelovi/header.php';?>
 			<div id="middle">
 				<?php include 'dijelovi/aside.php'?>
+				
 				<article id="center-column">
-					<form action="LeadDet.php">
+				    <h2> Aktivnosti </h2> 
+					<form action="sifAkt_det.php">
 						<input type="submit" value="Dodaj novi">
 					</form>
 					<div>
+						
 						<table class="listing">
 							<tr>
 								<th>Detalji</th>
@@ -38,10 +41,60 @@
 								?> 
 						</table>
 					</div>
+					<h2> Statusi </h2> 
+					<form action="sifAkt_det.php">
+						<input type="submit" value="Dodaj novi">
+					</form>
+					<div>
+						
+						<table class="listing">
+							<tr>
+								<th>Detalji</th>
+								<th>Šifra</th>
+								<th>Opis</th>
+								
+							</tr>
+							<?php
+								$result = lm_sif_aktivnost_query();
+								while ($row = mysql_fetch_array($result)) {
+								    echo "<tr>";
+								    echo "<td><a  href='sif_akt_det.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+								    echo "<td>" . $row["sifra"] . "</td>";
+								    echo "<td>" . $row["opis"] . "</td>";    
+								}
+								               
+								?> 
+						</table>
+					</div>
+					<h2> Lead - Kvalifikacija </h2> 
+					<form action="sifAkt_det.php">
+						<input type="submit" value="Dodaj novi">
+					</form>
+					<div>
+						
+						<table class="listing">
+							<tr>
+								<th>Detalji</th>
+								<th>Šifra</th>
+								<th>Opis</th>
+								
+							</tr>
+							<?php
+								$result = lm_sif_aktivnost_query();
+								while ($row = mysql_fetch_array($result)) {
+								    echo "<tr>";
+								    echo "<td><a  href='sif_akt_det.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+								    echo "<td>" . $row["sifra"] . "</td>";
+								    echo "<td>" . $row["opis"] . "</td>";    
+								}
+								               
+								?> 
+						</table>
 				</article>
+				
 				<?php include 'dijelovi/section.php'?>
 			</div>
 			<?php include 'dijelovi/footer.php'?>    
-		</div>
+		
 	</body>
 </html>
