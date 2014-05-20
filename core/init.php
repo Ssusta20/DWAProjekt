@@ -13,6 +13,7 @@ require 'funkcije/kal.php';
 require 'funkcije/lm_sif_aktivnosti.php';
 require 'funkcije/lm_status_akt.php';
 require 'funkcije/lm_sif_kvalif.php';
+require 'funkcije/lm_aktivnost.php';
 
 
 $errors = array();

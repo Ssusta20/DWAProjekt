@@ -132,6 +132,7 @@ a.logo {
 	background:url(../img/bg-center-column.jpg) no-repeat left top;
 	background-size:700px;
 	min-height:584px;
+	height:610px;
 	padding:12px 16px 0 13px;
 	}	
 * html #center-column {height:584px;}

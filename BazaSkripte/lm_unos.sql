@@ -18,7 +18,9 @@ sa.opis opis_akt,
 sta.sifra sifra_sta,
 sta.opis opis_sta,
 u.id user_id,
-l.id lead_id
+l.id lead_id,
+sa.id sif_akt_id,
+sta.id status_akt_id
 from lm_aktivnost a,
 lm_user u,
 lm_lead l,
