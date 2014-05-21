@@ -49,7 +49,8 @@
 						<input type="submit" name = "akcija" value="Spremi" />
 						<input type="submit" name = "akcija" value="Obriši" />
 						<input type= "button" onClick="location.href='aktivnostDet.php?lm_lead_id=<?echo $_GET['id'];?>'" value='Dodaj Aktivnost' />
-						<input type= "button" onClick="location.href='lead.php'" value='Povratak' />
+						<!-- Ako je došao iz kalendara vraća se u kalendar-->
+						<input type= "button" onClick="location.href='<? if ($_GET['iz'] == 'kal'){echo 'kalendar.php';}else{echo 'lead.php';}?>'" value='Povratak' />
 						
 						</span>	
 						<!-- id sloga iz tablice da se vidi da li slog postoji ili je unos novog sloga-->
@@ -168,11 +169,7 @@
 						               exit();
 						               
 						       }
-						       /*else{
-						           #ako se došlo iz tablice
-						           
-						           }*/
-						           
+						       
 						   }
 						   
 						  
@@ -186,7 +183,7 @@
 				    	<tr>
 							<th>Detalji</th>
 							<th>Datum</th> 
-							<th>Lead</th>
+							<!--<th>Lead</th>-->
 							<th>Aktivnost</th>
 							<th>Status</th>
 						</tr>
@@ -196,7 +193,7 @@
 							    echo "<tr>";
 							    echo "<td><a  href='aktivnostDet.php?id=" .$row["id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
 							    echo "<td>" . $row["datum"] . "</td>";
-							    echo "<td>" . $row["ime"] ." ". $row["prezime"].",". $row["naziv_tvrtke"] . "</td>";
+							    #echo "<td>" . $row["ime"] ." ". $row["prezime"].",". $row["naziv_tvrtke"] . "</td>";
 							    echo "<td>" . $row["opis_akt"] . "</td>";
 							    echo "<td>" . $row["opis_sta"] . "</td>";
 							    echo "</tr>";

@@ -23,7 +23,7 @@ ob_start();?>
 <?php include 'dijelovi/aside.php'?>
        <article id="center-column">
          <form class="unos" action="aktivnostDet.php" method="GET">
-                <h1>User detalji</h1>
+                <h1>Aktivnost detalji</h1>
                 
                 <?php
                 
@@ -51,11 +51,8 @@ ob_start();?>
                 <!-- id sloga iz tablice da se vidi da li slog GEToji ili je unos novog sloga-->
                 <input type="text" name="id" value="<?= $_GET['id'] ?>" hidden />
                 <br>
-                <label>RB:</label>
-                <input type="text" name="rb" value="<?= $_GET['rb'] ?>" required />
-                <br>
                 <label>Datum:</label>
-                 <input type="text" name="datum" value="<?= $_GET['datum'] ?>" required />
+                <input type="text" name="datum" value="<?= $_GET['datum'] ?>" required />
                 <br>
                 <label>Napomena:</label>
 				<textarea name="napomena" cols = "30" rows = "6" maxlength = "2000" > <?php echo $_GET['napomena'] ?> </textarea>
@@ -117,14 +114,14 @@ ob_start();?>
                 if($akcija == "Spremi"){
 
                     if (empty($id)){
-                        $id = lm_aktivnost_insert ($rb,$datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id);
+                        $id = lm_aktivnost_insert ($datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id);
                         header("location: LeadDet.php?id=".$_GET['lm_lead_id']);
                         exit();
                         
                     }
                     else {
                         
-                        lm_aktivnost_update($id, $rb,$datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id);
+                        lm_aktivnost_update($id,$datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id);
                         header("location: LeadDet.php?id=".$_GET['lm_lead_id']);
                         exit();
                     }

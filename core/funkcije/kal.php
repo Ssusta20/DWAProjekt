@@ -40,7 +40,7 @@
 	                   echo "<td>" . $row["opis_akt"] . "</td>";
 	                   echo "<td>" . $row["opis_sta"] . "</td>";
 	                   #treba još napraviti da ide u aktivnost kada se napravi forma aktivnosti
-	                   echo "<td><a  href='LeadDet.php?id=" .$row["lead_id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+	                   echo "<td><a  href='LeadDet.php?id=" .$row["lead_id"]. "&iz=kal'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
 	                   echo "</tr>";
 	                   
 	                

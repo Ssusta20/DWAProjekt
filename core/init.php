@@ -16,6 +16,4 @@ require 'funkcije/lm_sif_kvalif.php';
 require 'funkcije/lm_aktivnost.php';
 
 
-$errors = array();
-
 ?>
