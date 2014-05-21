@@ -123,7 +123,7 @@ ob_start();?>
                         
                     }
                     else {
-                           echo $akcija;
+                        
                         lm_aktivnost_update($id, $rb,$datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id);
                         header("location: LeadDet.php?id=".$_GET['lm_lead_id']);
                         exit();
