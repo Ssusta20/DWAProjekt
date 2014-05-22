@@ -54,7 +54,7 @@
 						
 						</span>	
 						<!-- id sloga iz tablice da se vidi da li slog postoji ili je unos novog sloga-->
-						<input type="text" name="id" value="<?= $_GET['id'] ?>" hidden />
+						<input type="hidden" name="id" value="<?= $_GET['id'] ?>"  />
 						<br>
 						<label>Šifra:</label>
 						<input type="text" name="sifra" value="<?= $_GET['sifra'] ?>" required />
@@ -150,8 +150,8 @@
 						       
 						       if (empty($id)){
 						           $id = lm_lead_insert ($sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, mysql_real_escape_string($napomena), $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
-						           header("location: lead.php");
-						           exit();
+						           #header("location: lead.php");
+						           #exit();
 						           
 						       }
 						       else {

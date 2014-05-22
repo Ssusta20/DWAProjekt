@@ -49,7 +49,7 @@ ob_start();?>
                 </span>
                 <br>
                 <!-- id sloga iz tablice da se vidi da li slog GEToji ili je unos novog sloga-->
-                <input type="text" name="id" value="<?= $_GET['id'] ?>" hidden />
+                <input type="hidden" name="id" value="<?= $_GET['id'] ?>"  />
                 <br>
                 <label>Datum:</label>
                 <input type="text" name="datum" value="<?= $_GET['datum'] ?>" required />

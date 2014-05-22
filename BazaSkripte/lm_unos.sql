@@ -30,3 +30,5 @@ Where a.lm_lead_id=l.id
 and a.lm_sif_aktivnost_id = sa.id 
 and lm_status_akt_id = sta.id 
 and u.id=l.lm_user_id;
+
+alter table lm_aktivnost drop column rb;

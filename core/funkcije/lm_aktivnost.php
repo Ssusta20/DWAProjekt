@@ -10,7 +10,7 @@
 	}
 	
 	 function lm_aktivnost_query_det($id){
-	    $query = mysql_query("select * from lm_aktivnost where id = '$id';");
+	    $query = mysql_query("select id, date_format(datum,'%d.%m.%Y') datum, napomena,lm_lead_id,lm_sif_aktivnost_id,lm_status_akt_id  from lm_aktivnost where id = '$id';");
 	    if (!$query) {
 	        die('Invalid query: ' . mysql_error());
 	    }
@@ -19,6 +19,7 @@
 	
 	function lm_aktivnost_insert ($datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id){
 	    
+	     $napomena = mysql_real_escape_string($napomena);
 	     $insert= "INSERT INTO lm_aktivnost (datum,napomena,lm_lead_id,lm_sif_aktivnost_id,lm_status_akt_id)
 	                    VALUES('$datum', '$napomena', '$lm_lead_id', '$lm_sif_aktivnost_id','$lm_status_akt_id')";
 	    
@@ -29,16 +30,18 @@
 	}
 	
 	 function lm_aktivnost_update ($id,$datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id){
-	    $update ="UPDATE lm_aktivnost 
-	                  SET datum = '$datum',
-	                      napomena = '$napomena',
-	                      lm_lead_id = '$lm_lead_id',
-	                      lm_sif_aktivnost_id = '$lm_sif_aktivnost_id',
-	                      lm_status_akt_id ='$lm_status_akt_id'
-	                 WHERE id = '$id'";
+	    #pretvara datum u format u bazi
+	    $datum = date("Y-m-d", strtotime($datum));
+	    $napomena = mysql_real_escape_string($napomena);
+	    $update = "UPDATE lm_aktivnost 
+	                   SET datum = '$datum',
+	                       napomena = '$napomena',
+	                       lm_lead_id = '$lm_lead_id',
+	                       lm_sif_aktivnost_id = '$lm_sif_aktivnost_id',
+	                       lm_status_akt_id ='$lm_status_akt_id'
+	                  WHERE id = '$id'";
 	                
 	    
-	               
 	    mysql_query($update);
 	
 	}

@@ -18,15 +18,18 @@
 	}
 	
 	function lm_lead_insert ($sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id){
-	    mysql_query(
-	     "INSERT INTO lm_lead (sifra, ime, prezime, email, naziv_tvrtke, telefon, mobitel, ulica, grad, zip, napomena, lm_user_id, lm_sif_kvalif_id, lm_zemlja_id)
-	                    VALUES('$sifra', '$ime', '$prezime', '$email', '$naziv_tvrtke', '$telefon', '$mobitel', '$ulica', '$grad', '$zip', '$napomena', '$lm_user_id', '$lm_sif_kvalif_id', '$lm_zemlja_id')");
-	
-	     return mysql_insert_id();
+	    
+	    $napomena = mysql_real_escape_string($napomena);
+	    $insert = "INSERT INTO lm_lead (sifra, ime, prezime, email, naziv_tvrtke, telefon, mobitel, ulica, grad, zip, napomena, lm_user_id, lm_sif_kvalif_id, lm_zemlja_id)
+	                    VALUES('$sifra', '$ime', '$prezime', '$email', '$naziv_tvrtke', '$telefon', '$mobitel', '$ulica', '$grad', '$zip', '$napomena', '$lm_user_id', '$lm_sif_kvalif_id', '$lm_zemlja_id')";
+        
+	    mysql_query($insert);
+	    return mysql_insert_id();
 	    
 	}
 	
 	 function lm_lead_update ($id,$sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, $napomena, $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id){
+	    $napomena = mysql_real_escape_string($napomena);
 	    $update ="UPDATE lm_lead 
 	                  SET sifra = '$sifra',
 	                      ime = '$ime',

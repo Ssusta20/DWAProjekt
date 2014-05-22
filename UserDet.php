@@ -50,7 +50,7 @@ ob_start();?>
                 }
                 ?>
                 <!-- id sloga iz tablice da se vidi da li slog GEToji ili je unos novog sloga-->
-                <input type="text" name="id" value="<?= $_GET['id'] ?>" hidden />
+                <input type="hidden" name="id" value="<?= $_GET['id'] ?>"  />
                 <br>
                 <label>Username:</label>
                 <input type="text" name="username" value="<?= $_GET['username'] ?>" required />
