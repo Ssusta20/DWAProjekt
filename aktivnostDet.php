@@ -101,7 +101,6 @@ ob_start();?>
              if (!empty($_GET)){
                 $akcija = $_GET['akcija'];
                 $id = $_GET['id'];
-                $rb = $_GET['rb'];
                 $datum = $_GET['datum'];
                 $napomena = $_GET['napomena'];
                 $lm_lead_id = $_GET['lm_lead_id'];

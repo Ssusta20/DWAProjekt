@@ -74,4 +74,10 @@
 	    }
 	    return $query;
 	}
+	
+	/*Provjerava da li postoje aktivnosti prije brisanja lead-a*/
+	function lm_delete_aktivnost($lm_lead_id) {
+	    $delete = "DELETE FROM lm_aktivnost WHERE lm_lead_id = '$lm_lead_id'";
+	    mysql_query($delete);
+	}
 	?>

@@ -164,6 +164,8 @@
 						       
 						       }
 						       elseif ($akcija == "Obriši"){
+						               #Da li postoje aktivnosti za taj lead, pa ih obriši prije brisanja lead-a
+						               lm_delete_aktivnost($id);
 						               lm_lead_delete($id);
 						               header("location: lead.php");
 						               exit();
