@@ -150,8 +150,8 @@
 						       
 						       if (empty($id)){
 						           $id = lm_lead_insert ($sifra, $ime, $prezime, $email, $naziv_tvrtke, $telefon, $mobitel, $ulica, $grad, $zip, mysql_real_escape_string($napomena), $lm_user_id, $lm_sif_kvalif_id, $lm_zemlja_id);
-						           #header("location: lead.php");
-						           #exit();
+						           header("location: lead.php");
+						           exit();
 						           
 						       }
 						       else {

@@ -2,7 +2,7 @@
 	/*Goran Miljević*/
 	function lm_aktivnost_query($id){
 	  
-	    $query = mysql_query("select * from lm_kalendar_v1 where lead_id = '$id' order by datum,id;");
+	    $query = mysql_query("select * from lm_kalendar_v1 where lead_id = '$id' order by datum;");
 	    if (!$query) {
 	        die('Invalid query: ' . mysql_error());
 	    }
@@ -20,6 +20,7 @@
 	function lm_aktivnost_insert ($datum, $napomena, $lm_lead_id, $lm_sif_aktivnost_id,$lm_status_akt_id){
 	    
 	     $napomena = mysql_real_escape_string($napomena);
+	     $datum = date("Y-m-d", strtotime($datum));
 	     $insert= "INSERT INTO lm_aktivnost (datum,napomena,lm_lead_id,lm_sif_aktivnost_id,lm_status_akt_id)
 	                    VALUES('$datum', '$napomena', '$lm_lead_id', '$lm_sif_aktivnost_id','$lm_status_akt_id')";
 	    
